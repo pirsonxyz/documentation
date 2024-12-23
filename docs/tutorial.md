@@ -421,7 +421,7 @@ const app = new Elysia()
     .use(note) // [!code ++]
     .decorate('note', new Note()) // [!code --]
     .get('/note', ({ note }) => note.data) // [!code --]
-    .get(
+    .get( // [!code --]
         '/note/:index',
         ({ note, params: { index }, error }) => { // [!code --]
             return note.data[index] ?? error(404, 'oh no :(') // [!code --]
